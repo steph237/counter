@@ -1,0 +1,50 @@
+body{
+    background-color: rgb(18, 2, 20);
+}
+button {
+    background: pink;
+    border-radius: 5px;
+    border: none;
+    padding: 15px 30px;
+    font-size: 24px;
+    font-family: 'Times New Roman', Times, serif;
+    margin:60px 0   0px   450px;
+    display:inline-block;]
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    cursor: pointer;
+    transition: 0.3s ease all;
+    line-height: 2;
+    display: flex;
+
+  }
+  
+  button:hover {
+    background: rgb(225, 186, 243);
+  }
+  
+  .icon {
+    margin-right: 9px;
+  }
+  
+  .reset {
+    font-size: 14px;
+    padding: 8px 16px;
+    margin: 100px auto 0;
+  }
+  .countdown {
+    position: relative;
+    display: block;
+    text-indent: -9999px;
+    overflow: hidden;
+    margin-left: 6px;
+  }
+  
+  .numbers {
+    position: absolute;
+    top: 0;
+    left: 0;
+    text-align: center;
+    transition: 0.3s ease transform;
+    text-indent: 0;
+  }
