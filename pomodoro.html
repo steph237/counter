@@ -13,6 +13,14 @@
             <span class="icon">👉</span>
             NEXT TASK STARTS IN
         </button>
+        <div class="time">
+            <form>
+
+                <input type="number" id="time" name="time" value=""><br>
+            </form>
+        </div>
+
+        </form>
         <div id="pomodoro-app">
             <div id="container">
                 <div id="timer">
@@ -24,19 +32,20 @@
                     <div id="filler"></div>
                 </div>
                 <div id="buttons">
-                        <button id="work">START</button>
-                        <button id="counter" onclick="window.location.href = 'counter.html';">COUNT_DOWN</button>
-                        
-                        
+                    <button id="work">START</button>
+                    <button id="counter" onclick="window.location.href = 'counter.html';">COUNT_DOWN</button>
+
+
+
                 </div>
-                
+
 
 
             </div>
         </div>
     </div>
     <script>
-        const resetBtn = document.querySelector('.reset');
+        
         var pomodoro = {
             started: false,
             minutes: 0,
@@ -58,7 +67,7 @@
                 document.querySelector('#work').onclick = function () {
                     self.startWork.apply(self);
                 };
-                
+
             },
             resetVariables: function (mins, secs, started) {
                 this.minutes = mins;
@@ -68,9 +77,9 @@
                 this.fillerHeight = 0;
             },
             startWork: function () {
-                this.resetVariables(25, 0, true);
+                this.resetVariables(user_time(), 0, true);
             },
-            
+
             toDoubleDigit: function (num) {
                 if (num < 10) {
                     return "0" + parseInt(num, 10);
@@ -102,10 +111,21 @@
                 this.fillerHeight = 0;
             }
         };
+        
+        function user_time() {
+            var time = document.getElementById('time').value;
+            if (time >= 1) {
+                normal_time = parseInt(time);
+                return normal_time;
+            } else {
+                normal_time = 25;
+                return normal_time
+            }
+        }
         window.onload = function () {
             pomodoro.init();
         };
-        
+
     </script>
 </body>
 
